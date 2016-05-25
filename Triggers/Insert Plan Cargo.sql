@@ -39,7 +39,7 @@ LOOP
     END IF;
 PAGO := PAGO - Iteracion.SALDO;
 ELSE
-    EXIT WHEN PAGO = 0 OR PAGO < 0;
+    EXIT WHEN PAGO <= 0;
 END IF;
 END LOOP;
   NULL;
