@@ -1,3 +1,22 @@
+/*DETALLE TRIGGER 1:
+Crear un trigger que después de inserte una tupla en la tabla PLAN_PAGO 
+inserte en la tabla CARGO de la siguiente forma:
+
+* Debe insertar un número de cargos igual a la cantidad insertada en el campo CUOTAS en la tabla PLAN_PAGO.
+
+* La descripción de cada cargo debe tener la palabra CUOTA seguida de un numero indicando el número de cuota (ejemplo CUOTA 1).
+
+* La fecha_transacción del primer cargo debe ser la insertada en el campo FECHA_APLICACION de la tabla PLAN_PAGO, 
+  la fecha_transaccion de los cargos siguientes debe ser un dia siguiente de la fecha_vencimiento del cargo anterior.
+
+* La fecha_vencimiento de cada cargo debe ser 30 dias despues a la fecha_transaccion del cargo.
+
+* El monto de cada cargo debe ser el (MONTO del PLAN_PAGO )/(CUOTAS del PLAN_PAGO).
+
+* El SALDO del cargo debe ser el MONTO del cargo
+*/
+
+
 CREATE OR REPLACE TRIGGER INSERTCARGO 
 AFTER INSERT ON PLAN_PAGO
 FOR EACH ROW

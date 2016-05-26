@@ -1,3 +1,10 @@
+/*DETALLE DEL TRIGGER 2:
+Crear un trigger que después de que se inserte en la tabla de pagos debe aplicar 
+el pago actualizando el saldo de cada cobro en orden de fecha de vencimiento del más 
+antiguo al más reciente aplicando el pago completo, para este se debe insertar en la 
+tabla PAGO_CARGO la relación entre PAGO Y CARGO, relacionando el pago realizado con el cargo pagado.
+*/
+
 CREATE OR REPLACE TRIGGER INSERT_AND_UPDATE 
 AFTER INSERT ON PAGO
 FOR EACH ROW
